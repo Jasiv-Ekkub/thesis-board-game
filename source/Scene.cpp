@@ -1,5 +1,7 @@
 #include <Scene.hpp>
 
+Scene::Scene(): gameManager(GameManager::getInstance()) {}
+
 Scene::~Scene()
 {
 	if(isLoaded)

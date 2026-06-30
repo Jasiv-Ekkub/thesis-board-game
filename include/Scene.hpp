@@ -1,12 +1,15 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
+#include <GameManager.hpp>
+
 class Scene
 {
 	bool isLoaded;
 
 	protected:
-	Scene() = default;
+	GameManager* gameManager;
+	Scene();
 	~Scene();
 
 	public:
@@ -17,5 +20,6 @@ class Scene
 	virtual void update();
 	virtual void unload();
 };
-
+#else
+class Scene;
 #endif

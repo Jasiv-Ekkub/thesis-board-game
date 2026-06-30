@@ -13,9 +13,15 @@ void MainMenu::load()
 
 void MainMenu::update()
 {
-	ClearBackground(RAYWHITE);
-	if(GuiButton({10, 10, 500, 50}, "Options"))
-		GameManager::getInstance()->changeScene(Options::getInstance());
+	int buttonWidth = gameManager->getRenderWidth()/4 - 20;
+	if(GuiButton(gameManager->getAnchoredRectangle<1,3,1,2>(0, 0, buttonWidth, 50), "Options"))
+	{
+		gameManager->changeScene(Options::getInstance());
+	}
+	if(GuiButton(gameManager->getAnchoredRectangle<2,3,1,2>(0, 0, buttonWidth, 50), "Options"))
+	{
+		gameManager->changeScene(Options::getInstance());
+	}
 }
 
 void MainMenu::unload()

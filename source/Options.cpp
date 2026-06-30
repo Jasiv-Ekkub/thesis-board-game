@@ -10,7 +10,6 @@ void Options::load()
 
 void Options::update()
 {
-	ClearBackground(GRAY);
 }
 
 void Options::unload()
