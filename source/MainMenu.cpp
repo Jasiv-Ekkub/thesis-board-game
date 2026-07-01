@@ -2,6 +2,7 @@
 #include <raygui.h>
 
 #include <GameManager.hpp>
+#include <LayoutEngine.hpp>
 #include <MainMenu.hpp>
 #include <Options.hpp>
 
@@ -13,14 +14,20 @@ void MainMenu::load()
 
 void MainMenu::update()
 {
-	int buttonWidth = gameManager->getRenderWidth()/4 - 20;
-	if(GuiButton(gameManager->getAnchoredRectangle<1,3,1,2>(0, 0, buttonWidth, 50), "Options"))
+	LayoutEngine& le = LayoutEngine::getInstance();
+	le.setupGrid(10,10,10);
+	if(GuiButton(le.getPlacement(3,6,5,5), "Play"))
 	{
-		gameManager->changeScene(Options::getInstance());
 	}
-	if(GuiButton(gameManager->getAnchoredRectangle<2,3,1,2>(0, 0, buttonWidth, 50), "Options"))
+	if(GuiButton(le.getPlacement(3,6,6,6), "Options"))
 	{
-		gameManager->changeScene(Options::getInstance());
+		gameManager.changeScene(Options::getInstance());
+	}
+	if(GuiButton(le.getPlacement(3,6,7,7), "Credits"))
+	{
+	}
+	if(GuiButton(le.getPlacement(3,6,8,8), "Exit"))
+	{
 	}
 }
 

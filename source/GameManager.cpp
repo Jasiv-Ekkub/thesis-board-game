@@ -2,10 +2,10 @@
 
 #include <GameManager.hpp>
 
-GameManager* GameManager::getInstance()
+GameManager& GameManager::getInstance()
 {
 	static GameManager instance;
-	return &instance;
+	return instance;
 }
 
 void GameManager::changeScene(Scene* scene)
@@ -38,13 +38,12 @@ GameManager::~GameManager()
 		currentScene->unload();
 }
 
-const int& GameManager::getRenderWidth() { return renderWidth; }
-const int& GameManager::getRenderHeight() { return renderHeight; }
+const DisplayInfo& GameManager::getDisplayInfo() { return displayInfo; }
 
 void GameManager::refresh()
 {
-	renderWidth = GetRenderWidth();
-	renderHeight = GetRenderHeight();
+	displayInfo.renderWidth = GetRenderWidth();
+	displayInfo.renderHeight = GetRenderHeight();
 }
 
 

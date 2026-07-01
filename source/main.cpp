@@ -6,7 +6,7 @@
 #include <GameManager.hpp>
 #include <MainMenu.hpp>
 
-GameManager* gameManager = GameManager::getInstance();
+GameManager& gameManager = GameManager::getInstance();
 
 int main()
 {
@@ -17,14 +17,14 @@ int main()
 	GuiLoadStyleCyber();
 	GuiSetStyle(DEFAULT, TEXT_SIZE, 24);
 
-	gameManager->changeScene(MainMenu::getInstance());
+	gameManager.changeScene(MainMenu::getInstance());
 
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
 		ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
-		gameManager->update();
+		gameManager.update();
 		
 		EndDrawing();
 	}

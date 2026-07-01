@@ -8,7 +8,7 @@ class Scene
 	bool isLoaded;
 
 	protected:
-	GameManager* gameManager;
+	GameManager& gameManager;
 	Scene();
 	~Scene();
 
