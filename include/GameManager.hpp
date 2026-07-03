@@ -33,6 +33,7 @@ class GameManager
 
 #else
 
+struct DisplayInfo;
 class GameManager;
 
 #endif

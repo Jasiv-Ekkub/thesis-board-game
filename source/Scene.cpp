@@ -1,6 +1,6 @@
 #include <Scene.hpp>
 
-Scene::Scene(): gameManager(GameManager::getInstance()) {}
+Scene::Scene(): gameManager(GameManager::getInstance()), layoutEngine(LayoutEngine::getInstance()) {}
 
 Scene::~Scene()
 {

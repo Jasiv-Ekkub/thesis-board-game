@@ -8,33 +8,29 @@
 
 void MainMenu::load()
 {
-	//Loading
 	Scene::load();
+	logoImage = LoadTexture("resource/texture/texture0.png");
 }
 
 void MainMenu::update()
 {
-	LayoutEngine& le = LayoutEngine::getInstance();
-	le.setupGrid(10,10,10);
-	if(GuiButton(le.getPlacement(3,6,5,5), "Play"))
+	DrawTexturePro(logoImage, {0,0,logoImage.width,logoImage.height}, layoutEngine.getFittedPlacement(3,12, 1, 3, 2), {}, 0, WHITE);
+	if(GuiButton(layoutEngine.getPlacement(6,9,4,4), "Play"))
 	{
 	}
-	if(GuiButton(le.getPlacement(3,6,6,6), "Options"))
+	if(GuiButton(layoutEngine.getPlacement(6,9,5,5), "Options"))
 	{
 		gameManager.changeScene(Options::getInstance());
 	}
-	if(GuiButton(le.getPlacement(3,6,7,7), "Credits"))
-	{
-	}
-	if(GuiButton(le.getPlacement(3,6,8,8), "Exit"))
+	if(GuiButton(layoutEngine.getPlacement(6,9,6,6), "Exit"))
 	{
 	}
 }
 
 void MainMenu::unload()
 {
-	//Unloading
 	Scene::unload();
+	UnloadTexture(logoImage);
 }
 
 MainMenu* MainMenu::getInstance()

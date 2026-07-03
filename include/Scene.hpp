@@ -2,6 +2,7 @@
 #define SCENE_HPP
 
 #include <GameManager.hpp>
+#include <LayoutEngine.hpp>
 
 class Scene
 {
@@ -9,6 +10,7 @@ class Scene
 
 	protected:
 	GameManager& gameManager;
+	LayoutEngine& layoutEngine;
 	Scene();
 	~Scene();
 

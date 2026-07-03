@@ -13,7 +13,7 @@ void Options::load()
 
 void Options::update()
 {
-	if(GuiButton({10, 10, 250, 50}, "Main menu"))
+	if(GuiButton(layoutEngine.getPlacement(6,9,6,6), "Main Menu"))
 	{
 		gameManager.changeScene(MainMenu::getInstance());
 	}

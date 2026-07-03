@@ -17,6 +17,7 @@ int main()
 	GuiLoadStyleCyber();
 	GuiSetStyle(DEFAULT, TEXT_SIZE, 24);
 
+	LayoutEngine::getInstance().setupGrid(16,9,15);
 	gameManager.changeScene(MainMenu::getInstance());
 
 	while (!WindowShouldClose())
