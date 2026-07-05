@@ -13,6 +13,8 @@ struct DisplayInfo
 
 class GameManager
 {
+	bool isExiting;
+
 	Scene* currentScene;
 	Scene* nextScene;
 
@@ -29,6 +31,9 @@ class GameManager
 
 	void refresh();
 	const DisplayInfo& getDisplayInfo();
+
+	const bool& getIsExiting();
+	void setIsExiting(bool isExiting);
 };
 
 #else

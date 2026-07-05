@@ -17,6 +17,10 @@ void Options::update()
 	{
 		gameManager.changeScene(MainMenu::getInstance());
 	}
+	if(GuiButton(layoutEngine.getPlacement(6,9,5,5), "Toggle fullscreen"))
+	{
+		ToggleFullscreen();
+	}
 }
 
 void Options::unload()

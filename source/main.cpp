@@ -20,7 +20,7 @@ int main()
 	LayoutEngine::getInstance().setupGrid(16,9,15);
 	gameManager.changeScene(MainMenu::getInstance());
 
-	while (!WindowShouldClose())
+	while (!WindowShouldClose() && !gameManager.getIsExiting())
 	{
 		BeginDrawing();
 		ClearBackground(GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));

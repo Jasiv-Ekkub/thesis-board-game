@@ -47,3 +47,12 @@ void GameManager::refresh()
 }
 
 
+const bool& GameManager::getIsExiting()
+{
+	return isExiting;
+}
+
+void GameManager::setIsExiting(bool isExiting)
+{
+	this->isExiting = isExiting;
+}

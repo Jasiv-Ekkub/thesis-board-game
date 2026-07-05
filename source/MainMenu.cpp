@@ -24,6 +24,7 @@ void MainMenu::update()
 	}
 	if(GuiButton(layoutEngine.getPlacement(6,9,6,6), "Exit"))
 	{
+		gameManager.setIsExiting(true);
 	}
 }
 
